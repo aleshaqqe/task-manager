@@ -1,12 +1,21 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import './App.css'
 import { Form } from './Form.jsx'
 import {ToDoItem} from './ToDoItem.jsx'
 
 function App() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(()=>{
+    const saved = localStorage.getItem('todos');
+    return saved ? JSON.parse(saved):[];
+  });
 
 
+
+
+  //Save to localStorage
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  },[todos]);
 
   //Function for delete all tasks
   const removeAllTasks = () =>{

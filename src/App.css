@@ -73,6 +73,9 @@ h1{
   &:hover{
     background-color:#dbaf0f;
   }
+  &:active{
+    background-color:#c2a840;
+  }
 }
 .todo-tools{
   margin-top:30px;
@@ -100,6 +103,7 @@ input {
 .todo-sortBtn{
   background-color:#830fdb;
 }
+
 .todo-remove{
   background-color:red;
 }
@@ -164,9 +168,13 @@ input {
     font-size: 10px;
   }
 }
-@media screen and (max-width:270px){
+@media screen and (max-width:480px){
   .todo-tools{
     flex-direction: column;
+  }
+  .todo-complete{
+    margin-right:20px;
+    margin-top:20px;
   }
   btn{
     flex: 0 0 auto;
