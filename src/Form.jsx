@@ -44,8 +44,8 @@ export function Form({todos,addTodo,sortByAlphabet,sortByCompleted,removeAllTask
           />
         )}
         <div className={`todo-tools`}>
-          <button type={`button`} onClick={()=>sortByAlphabet()} className={`todo-sortBtn btn`}>Sort by Alphabet</button>
-          <button type={`button`} onClick={()=>sortByCompleted()} className={`todo-sortBtn btn`}>Sort by Completed</button>
+          <button type={`button`} onClick={()=>sortByAlphabet()} className={`todo-sortBtn sort1 btn`}>Sort by Alphabet</button>
+          <button type={`button`} onClick={()=>sortByCompleted()} className={`todo-sortBtn sort2 btn`}>Sort by Completed</button>
         </div>
         <br/>
         <br/>
