@@ -59,6 +59,7 @@ h1{
 .todo-tools{
   margin-top: 1rem;
 }
+
 .btn{
   font-weight: 600;
   color:#ffff;
@@ -94,6 +95,7 @@ input {
   border:2px solid black;
   border-radius: 4px;
   font-size: 16px;
+  touch-action: manipulation;
 
 }
 .todo-addBtn{
