@@ -27,9 +27,16 @@ function App() {
   const sortByCompleted=()=>{
     setTodos(prev=>[...prev].sort((a,b)=>a.completed-b.completed));
   }
-  //Sort by alphabet (ChatGPT thx)
+
+
   const sortByAlphabet = ()=>{
-    setTodos(prev => [...prev].sort((a,b) => a.title.localeCompare(b.title, ['ru','uk','en'], {sensitivity:'base'})));
+    setTodos((prev)=>{
+      return [...prev].sort((a,b)=>{
+        const cleanA = a.title.replace(/\s+/g, '');
+        const cleanB = b.title.replace(/\s+/g, '');
+        return cleanA.localeCompare(cleanB, ['ru','uk','en'],{sensitivity:'base',numeric:true,});
+      })
+    })
   }
 
   const removeTask = (id) => {
@@ -50,6 +57,7 @@ function App() {
         id: Date.now(),
         title: input,
         completed: false,
+        priority:0,
       }
 
       setTodos(prev => [...prev, newTask]);
